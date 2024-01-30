@@ -5,6 +5,7 @@ import profile from "../assets/profile.png";
 import { Button } from "./ui/button";
 import { TypeAnimation } from 'react-type-animation';
 import { squence } from "../constants/squence";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -14,21 +15,17 @@ const Hero = () => {
           <Image src={profile} alt="profile" width={600} height={100} />
         </div>
         <h1 className="max-w-screen-sm text-center text-[55px] font-extrabold">
-          Hi! I'm {""}
+            Hi! I&apos;m {""}
           <span className="underline">
           <TypeAnimation
             cursor={true}
             sequence={squence}
             wrapper="span"
+            speed={200}
             repeat={Infinity}
           />
           </span>
         </h1>
-        <p className="mx-auto mt-[40px] mb-[54px] text-[18px] text-center max-w-lg">
-          Im a 4th year Information Technology student at the Nueva Ecija of
-          Science and Technology. I am a self-taught web developer and I love to
-          build websites and web applications.
-        </p>
         <div className="flex justify-center gap-5">
           <Button variant={"link"}>
             <FaGithub size={40} />

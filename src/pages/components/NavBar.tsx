@@ -33,12 +33,10 @@ const NavBar = () => {
           <Button variant={"link"}>Projects</Button>
         </Link>
       </div>
-      <div className="">
+      <div className="flex justify-center gap-1">
         <Link href={NavbarItems.Contact}>
-          <Button variant={"destructive"}>Connect</Button>
+          <Button variant={"secondary"}>Connect</Button>
         </Link>
-      </div>
-      <div className="">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon">
