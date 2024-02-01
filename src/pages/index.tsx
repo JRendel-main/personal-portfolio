@@ -1,26 +1,26 @@
-import Layout from "./components/Layout";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+import Layout from "@/components/Layout";
+import Hero from "@/components/Hero";
+import Education from "@/components/Education";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
 
 
 export default function Home() {
   return (
-    <main className={roboto.className}>
+    <main>
       <Layout>
         <div className="container">
-          <div className="mb-5">
+          <div className="mb-10">
             <Hero />
           </div>
-          <div className="mb-5">
+          <div className="mb-10">
             <About />
+          </div>
+          <div className="mb-10">
+            <Education />
+          </div>
+          <div className="mb-10">
+            <Skills />
           </div>
         </div>
       </Layout>

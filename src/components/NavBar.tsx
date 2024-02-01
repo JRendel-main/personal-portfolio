@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "./ui/button";
-import { NavbarItems } from "../constants/NavbarItems";
+import { Button } from "@/pages/components/ui/button";
+import { NavbarItems } from "@/constants/NavbarItems";
 import Link from "next/link";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -12,13 +12,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const NavBar = () => {
-    const { theme, setTheme } = useTheme();
-    const handleChangeTheme = (theme: string) => {
-      setTheme(theme);
-    };
+  const { theme, setTheme } = useTheme();
+
+  const handleChangeTheme = (theme: string) => {
+    setTheme(theme);
+  };
   return (
-    <div className="flex justify-between gap-5 mt-1 p-4 sticky top-0 backdrop-blur">
-      <h1 className="text-4sm font-bold animate-bounce">JRendel</h1>
+    <div className="flex justify-between gap-5 mt-1 p-4 top-0 backdrop-blur">
+      <h1 className="text-4xl font-bold animate-pulse">JRendel</h1>
       <div className="flex gap-5 content-center">
         <Link href={NavbarItems.Home}>
           <Button variant={"link"}>Home</Button>
@@ -26,16 +27,11 @@ const NavBar = () => {
         <Link href={NavbarItems.About}>
           <Button variant={"link"}>About</Button>
         </Link>
-        <Link href={NavbarItems.Education}>
-          <Button variant={"link"}>Education</Button>
+        <Link href={NavbarItems.Skills}>
+          <Button variant={"link"}>Skills</Button>
         </Link>
         <Link href={NavbarItems.Projects}>
           <Button variant={"link"}>Projects</Button>
-        </Link>
-      </div>
-      <div className="flex justify-center gap-1">
-        <Link href={NavbarItems.Contact}>
-          <Button variant={"secondary"}>Connect</Button>
         </Link>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

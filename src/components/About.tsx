@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import profile from "../assets/profile.png";
 import { Separator } from "@/components/ui/separator";
-import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+import { Abouts } from "@/constants/About";
 import Link from "next/link";
 
 const About = () => {
@@ -12,7 +12,7 @@ const About = () => {
       <div className="container">
         <div className="grid grid-cols-12">
           <div className="col-span-4">
-            <Image src={profile} alt="profile" width={800} height={500} />
+            <Image src={profile} alt="profile" width={1000} height={500} />
           </div>
           <div className="col-span-8">
             <div className="flex flex-col justify-center h-full">
@@ -30,47 +30,44 @@ const About = () => {
                 I am a self-taught web developer and I love to build websites
                 and web applications.
               </p>
-              <div className="mt-5 flex flex-row">
+              <div className="mt-5 flex justify-content">
                 <h1 className="text-2m font-bold">Name: &nbsp;</h1>
-                <h1 className="text-2m font-light">
-                  &nbsp;John Rendel San Luis
-                </h1>
+                <h1 className="text-2m font-light">&nbsp;{Abouts.Name}</h1>
               </div>
               <div className="mt-5 flex flex-row">
                 <h1 className="text-2m font-bold">Age: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp;22</h1>
+                <h1 className="text-2m font-light">&nbsp;{Abouts.Age}</h1>
               </div>
               <div className="mt-5 flex flex-row">
-                <h1 className="text-2m font-bold">Location: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp;Philippines</h1>
+                <h1 className="text-2m font-bold">Address: &nbsp;</h1>
+                <h1 className="text-2m font-light">&nbsp;{Abouts.Location}</h1>
               </div>
               <div className="mt-5 flex flex-row">
                 <h1 className="text-2m font-bold">Email: &nbsp;</h1>
-                <h1 className="text-2m font-light">
-                  &nbsp; sanluisjohnrendel87@gmail.com
-                </h1>
+                <h1 className="text-2m font-light">&nbsp; {Abouts.Email}</h1>
               </div>
               <div className="mt-5 flex flex-row">
                 <h1 className="text-2m font-bold">Phone: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp;+639 35 402 7524</h1>
+                <h1 className="text-2m font-light">&nbsp; {Abouts.Phone}</h1>
               </div>
               <div className="mt-5 flex flex-row">
                 <h1 className="text-2m font-bold">Degree: &nbsp;</h1>
-                <h1 className="text-2m font-light">
-                  &nbsp;Bachelor of Science in Information Technology
-                </h1>
+                <h1 className="text-2m font-light">&nbsp;{Abouts.Degree}</h1>
               </div>
               <div className="mt-5 flex flex-row">
                 <h1 className="text-2m font-bold">School: &nbsp;</h1>
-                <h1 className="text-2m font-light">
-                  &nbsp;Nueva Ecija University of Science and Technology
-                </h1>
+                <h1 className="text-2m font-light">&nbsp; {Abouts.School}</h1>
               </div>
               <div className="mt-5 flex flex-row">
                 <h1 className="text-2m font-bold">Major: &nbsp;</h1>
-                <h1 className="text-2m font-light">
-                  &nbsp;Database Systems Technologies
-                </h1>
+                <h1 className="text-2m font-light">&nbsp; {Abouts.Major}</h1>
+              </div>
+              <div className="mt-10 flex flex-row">
+                <h1 className="5xl font-bold">25</h1>&nbsp; 
+                <p>Projects Completed</p>
+              </div>
+              <div className="mt-2 flex flex-row">
+                <Button variant="download">Download CV</Button>
               </div>
             </div>
           </div>
