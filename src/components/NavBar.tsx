@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/pages/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { NavbarItems } from "@/constants/NavbarItems";
 import Link from "next/link";
 import { Moon, Sun } from "lucide-react";
