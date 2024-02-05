@@ -3,7 +3,7 @@ export const NavbarItems = {
     About: '#about',
     Resume: '#resume',
     Education: '#education',
-    Projects: '#projects',
+    Projects: '/projects',
     Skills: '#skills',
     Contact: '/contact',
     Connect: '/connect',

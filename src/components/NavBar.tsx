@@ -18,7 +18,7 @@ const NavBar = () => {
     setTheme(theme);
   };
   return (
-    <div className="flex justify-between gap-5 mt-1 p-4 top-0 backdrop-blur">
+    <div className="flex justify-between gap-5 mt-1 p-4 top-0 sticky backdrop-blur-lg">
       <h1 className="text-4xl font-bold animate-pulse">JRendel</h1>
       <div className="flex gap-5 content-center">
         <Link href={NavbarItems.Home}>

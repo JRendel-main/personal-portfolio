@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "../pages/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { TypeAnimation } from "react-type-animation";
 import { squence } from "../constants/squence";
 import profilesm from "@/assets/profilesm.png";
@@ -22,11 +22,11 @@ const Hero = () => {
           </p>
         </div>
         <div className="flex gap-2 mb-5">
-          <Button variant={"outline"} size="lg">
-            <a href="#about">About Me</a>
+          <Button variant={"purple"} size="lg">
+            <Link href={"/contact"}>Contact Me</Link>
           </Button>
           <Link href="/projects">
-            <Button variant={"secondary"} size="lg">
+            <Button variant={"inverted_purple"} size="lg">
               My Projects
             </Button>
           </Link>
@@ -35,7 +35,7 @@ const Hero = () => {
       <div className="grid-span-1 place-content-end">
       <div className="mb-5">
         <div className="">
-          <Image src={profilesm} alt="profile" width={500} height={100} />
+          <Image src={profilesm} alt="profile" width={600} height={100} />
         </div>
       </div>
       </div>

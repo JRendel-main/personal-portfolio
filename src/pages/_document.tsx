@@ -6,7 +6,7 @@ export default function Document() {
       <Head
         title="JRendel"
       />
-      <body className={"bg-slate-100 dark:bg-zinc-900 dark:text-white transition-colors duration-500 ease-in-out"
+      <body className={"bg-slate-100 dark:bg-zinc-900 dark:text-slate-100 transition-colors duration-500 ease-in-out"
       }>
           <Main />
           <NextScript />

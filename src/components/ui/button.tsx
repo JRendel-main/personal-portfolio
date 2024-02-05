@@ -20,6 +20,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         download: "bg-primary text-primary-foreground hover:bg-primary/90",
         contact: "bg-accent text-accent-foreground hover:bg-accent/90",
+        purple: "bg-purple-500 text-slate-50 shadow hover:bg-purple-500/80",
+        inverted_purple: "bg-slate-50 text-purple-500 shadow hover:bg-slate-50/80",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -1,9 +1,8 @@
 import React, { ReactNode } from "react";
-import { Chivo_Mono as Inter } from "next/font/google";
+import { Space_Grotesk as Inter } from "next/font/google";
 import NavBar from "./NavBar";
-import NewNavBar from "./NewNavBar";
 import { ThemeProvider } from "@/components/theme-provider";
-import background from "@/assets/background.jpg";
+import Footer from "./Footer";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", weight: ["400"]});
 interface LayoutProps {
@@ -16,6 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <NavBar />
         {children}
+        <Footer />
       </ThemeProvider>
     </div>
   );
