@@ -13,7 +13,7 @@ export default function Home() {
           <div className="mb-10">
             <Hero />
           </div>
-          <div className="mb-10">
+          <div className=" mb-10">
             <About />
           </div>
           <div className="mb-10">

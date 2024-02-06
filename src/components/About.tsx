@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import profile from "../assets/profile.png";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Abouts } from "@/constants/About";
@@ -8,20 +7,26 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div id="about">
-      <div className="container">
-        <div className="grid grid-cols-12">
-          <div className="col-span-4">
-            <Image src={profile} alt="profile" width={1000} height={500} />
+    <div id="about" className="py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className="col-span-12 md:col-span-4 flex justify-center md:justify-start">
+            <div className="relative w-48 h-48">
+              <Image
+                src={"/images/profilesm.png"}
+                alt="profile"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-full"
+              />
+            </div>
           </div>
-          <div className="col-span-8">
-            <div className="flex flex-col justify-center h-full">
-              <div>
-                <h1 className="text-5xl font-bold">About Me: </h1>
-              </div>
+          <div className="col-span-12 md:col-span-8">
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl font-bold mb-4">About Me</h1>
               <Separator />
-              <p className="text-[18px] mt-5">
-                Im a 4th year Information Technology student at the&nbsp;
+              <p className="text-lg mt-4">
+                I&apos;m a 4th year Information Technology student at the&nbsp;
                 <Link href="https://neust.edu.ph" target="_blank">
                   <span className="underline font-bold">
                     Nueva Ecija of Science and Technology.
@@ -30,43 +35,51 @@ const About = () => {
                 I am a self-taught web developer and I love to build websites
                 and web applications.
               </p>
-              <div className="mt-5 flex justify-content">
-                <h1 className="text-2m font-bold">Name: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp;{Abouts.Name}</h1>
+              <div className="mt-8">
+                <h2 className="text-2xl font-bold mb-2">Personal Information</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="font-bold">Name:</p>
+                    <p>{Abouts.Name}</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">Age:</p>
+                    <p>{Abouts.Age}</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">Address:</p>
+                    <p>{Abouts.Location}</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">Email:</p>
+                    <p>{Abouts.Email}</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">Phone:</p>
+                    <p>{Abouts.Phone}</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">Degree:</p>
+                    <p>{Abouts.Degree}</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">School:</p>
+                    <p>{Abouts.School}</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">Major:</p>
+                    <p>{Abouts.Major}</p>
+                  </div>
+                </div>
               </div>
-              <div className="mt-5 flex flex-row">
-                <h1 className="text-2m font-bold">Age: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp;{Abouts.Age}</h1>
+              <div className="mt-8">
+                <h2 className="text-2xl font-bold mb-2">Projects</h2>
+                <div className="flex items-center">
+                  <h1 className="text-5xl font-bold mr-2">25</h1>
+                  <p>Projects Completed</p>
+                </div>
               </div>
-              <div className="mt-5 flex flex-row">
-                <h1 className="text-2m font-bold">Address: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp;{Abouts.Location}</h1>
-              </div>
-              <div className="mt-5 flex flex-row">
-                <h1 className="text-2m font-bold">Email: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp; {Abouts.Email}</h1>
-              </div>
-              <div className="mt-5 flex flex-row">
-                <h1 className="text-2m font-bold">Phone: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp; {Abouts.Phone}</h1>
-              </div>
-              <div className="mt-5 flex flex-row">
-                <h1 className="text-2m font-bold">Degree: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp;{Abouts.Degree}</h1>
-              </div>
-              <div className="mt-5 flex flex-row">
-                <h1 className="text-2m font-bold">School: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp; {Abouts.School}</h1>
-              </div>
-              <div className="mt-5 flex flex-row">
-                <h1 className="text-2m font-bold">Major: &nbsp;</h1>
-                <h1 className="text-2m font-light">&nbsp; {Abouts.Major}</h1>
-              </div>
-              <div className="mt-10 flex flex-row">
-                <h1 className="5xl font-bold">25</h1>&nbsp; 
-                <p>Projects Completed</p>
-              </div>
-              <div className="mt-2 flex flex-row">
+              <div className="mt-8">
                 <Button variant="download">Download CV</Button>
               </div>
             </div>

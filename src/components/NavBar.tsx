@@ -1,60 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { NavbarItems } from "@/constants/NavbarItems";
 import Link from "next/link";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const NavBar = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  const handleChangeTheme = (theme: string) => {
-    setTheme(theme);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
   };
+
+  // Wait until mounted to render
+  if (!mounted) return null;
+
   return (
-    <div className="flex justify-between gap-5 mt-1 p-4 top-0 sticky backdrop-blur-lg">
-      <h1 className="text-4xl font-bold animate-pulse">JRendel</h1>
-      <div className="flex gap-5 content-center">
-        <Link href={NavbarItems.Home}>
-          <Button variant={"link"}>Home</Button>
-        </Link>
-        <Link href={NavbarItems.About}>
-          <Button variant={"link"}>About</Button>
-        </Link>
-        <Link href={NavbarItems.Skills}>
-          <Button variant={"link"}>Skills</Button>
-        </Link>
-        <Link href={NavbarItems.Projects}>
-          <Button variant={"link"}>Projects</Button>
-        </Link>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon">
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => handleChangeTheme("light")}>
-              Light
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleChangeTheme("dark")}>
-              Dark
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleChangeTheme("system")}>
-              System
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+    <nav className="flex justify-between items-center p-4 w-full backdrop-blur">
+      <h1 className="text-3xl font-bold">JRendel</h1>
+      <div className="flex gap-4 items-center">
+        <div className="hidden xl:flex gap-6">
+          <Link href={NavbarItems.Home}>
+            <Button variant={"link"}>Home</Button>
+          </Link>
+          <Link href={NavbarItems.About}>
+            <Button variant={"link"}>About</Button>
+          </Link>
+          <Link href={NavbarItems.Skills}>
+            <Button variant={"link"}>Skills</Button>
+          </Link>
+          <Link href={NavbarItems.Projects}>
+            <Button variant={"link"}>Projects</Button>
+          </Link>
+        </div>
+        <Button variant="outline" size="icon" onClick={toggleTheme} className="relative">
+          {theme === "dark" ? (
+            <Sun className="h-5 w-5 dark:text-yellow-400" />
+          ) : (
+            <Moon className="h-5 w-5 dark:text-yellow-400" />
+          )}
+          <span className="sr-only">Toggle theme</span>
+        </Button>
       </div>
-    </div>
+    </nav>
   );
 };
 

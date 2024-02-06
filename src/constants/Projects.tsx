@@ -58,5 +58,14 @@ export const ProjectList = [
         projectDemo: "https://github.com",
         projectTags: ["NodeJS", "Express", "Serverless"],
         projectType: "Backend"
+    },
+    {
+        id: 7,
+        projectName: "Simple Authentication API using NodeJS with JWT",
+        projectDescription: "A simple REST API for User Authentication using NodeJS with JWT.",
+        projectImage: "sample.png",
+        projectLink: "https://github.com",
+        projectDemo: "https://github.com",
+        projectTags: ["NodeJS", "Express", "JWT"],
     }
 ]
