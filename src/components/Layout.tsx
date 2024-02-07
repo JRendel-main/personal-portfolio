@@ -12,7 +12,6 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={`${inter.className}
-
     `}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <NavBar />

@@ -7,17 +7,15 @@ export default function Document() {
         title="JRendel"
       />
       <body className="
-        bg-gradient-to-r from-blue-200 to-cyan-200
-        dark:bg-gradient-to-r dark:from-blue-800 dark:to-cyan-800
+        bg-gradient-to-r from-neutral-100 to-stone-200
+        dark:from-neutral-800 dark:to-neutral-900
         text-gray-800
         dark:text-gray-200
         transition-all
         ease-in-out
         duration-500
-        w-full
-        h-full
-        overflow-x-hidden
       ">
+        
           <Main />
           <NextScript />
       </body>
