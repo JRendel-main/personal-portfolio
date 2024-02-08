@@ -33,8 +33,8 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
   projectType
 }) => {
   return (
-    <div className="flex flex-col items-center my-6">
-      <Card className="h-[530px] bg-opacity-75 overflow-hidden hover:shadow-md hover:shadow-purple-800 hover:scale-110 transition-all duration-700">
+    <div className="">
+      <Card className="h-[530px] bg-opacity-75 overflow-hidden hover:shadow-md hover:shadow-purple-800 hover:scale-110 transition-all duration-700 dark:bg-zinc-800 dark:backdrop-blur">
         <CardHeader className="bg-opacity-100">
           <h1 className="text-left text-sm font-small">
             {projectType === "Full Stack" ? (

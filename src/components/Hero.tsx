@@ -7,17 +7,21 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="hero py-20">
+    <div className="hero py-24 xs:py-7 sm:py-10 ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="md:w-1/2">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Welcome to My Portfolio</h1>
-            <p className="text-lg md:text-xl mb-8">
+          <div className="md:w-1/2 text-left">
+            <h1 className="text-5xl font-bold xs:text-s xs:text-center">
+              Welcome to My Portfolio
+            </h1>
+            <p className="text-lg md:text-xl mb-8 xs:text-center mt-3 text-blue-400">
               I&apos;m a passionate web developer with a focus on creating
               user-friendly, responsive web applications.
             </p>
-            <div className="mb-8">
-              <h1 className="text-2xl md:text-3xl font-bold mb-2">I&apos;m skilled in:</h1>
+            <div className="mb-8 flex justify-start xs:justify-center sm:justify-center gap-3">
+              <h1 className="text-2xl md:text-3xl font-bold mb-2">
+                I&apos;m skilled in:
+              </h1>
               <TypeAnimation
                 cursor={false}
                 sequence={[
@@ -32,14 +36,17 @@ const Hero = () => {
                 ]}
                 wrapper="h1"
                 repeat={Infinity}
+                className="text-2xl font-bold underline"
               />
             </div>
-            <div className="flex flex-col md:flex-row justify-between md:justify-start gap-3">
+            <div className="flex flex-col xs:flex-row justify-start items-center gap-3 xs:justify-center sm:justify-center">
               <Link href="/contact">
-                <Button variant={"purple"}>Get in Touch</Button>
+                <Button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:text-white">
+                  Get in Touch
+                </Button>
               </Link>
               <Link href="/projects">
-                <Button variant={"inverted_purple"}>View Projects</Button>
+                <Button>View Projects</Button>
               </Link>
             </div>
           </div>

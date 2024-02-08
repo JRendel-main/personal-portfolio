@@ -7,11 +7,11 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div id="about" className="py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-12 gap-8 items-center">
+    <div id="about" className="mt-20 py-12">
+      <div className="mx-auto px-12">
+        <div className="grid grid-cols-1 gap-8 items-center">
           <div className="col-span-12 xs:col-span-1 md:col-span-4 flex justify-center md:justify-start">
-            <div className="relative w-48 h-48">
+            <div className="relative w-48 h-48 xs:hidden sm:hidden">
               <Image
                 src={"/images/profilesm.png"}
                 alt="profile"
@@ -22,13 +22,13 @@ const About = () => {
             </div>
           </div>
           <div className="col-span-12 xs:col-span-1 md:col-span-8">
-            <div className="text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">About Me</h1> {/* Adjusted text size for responsiveness */}
+            <div className="text-center md:text-left xs:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xs:text-1xl font-bold mb-4">About Me</h1> {/* Adjusted text size for responsiveness */}
               <Separator />
               <p className="text-lg md:text-xl lg:text-2xl mt-4"> {/* Adjusted text size for responsiveness */}
                 I&apos;m a 4th year Information Technology student at the&nbsp;
                 <Link href="https://neust.edu.ph" target="_blank">
-                  <span className="underline font-bold">
+                  <span className="underline font-bold text-red-400">
                     Nueva Ecija of Science and Technology.
                   </span>
                 </Link>{" "}
