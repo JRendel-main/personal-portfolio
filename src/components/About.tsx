@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Abouts } from "@/constants/About";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -23,7 +24,7 @@ const About = () => {
           </div>
           <div className="col-span-12 xs:col-span-1 md:col-span-8">
             <div className="text-center md:text-left xs:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xs:text-1xl font-bold mb-4">About Me</h1> {/* Adjusted text size for responsiveness */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xs:text-1xl font-bold mb-4">About Me</h1>
               <Separator />
               <p className="text-lg md:text-xl lg:text-2xl mt-4"> {/* Adjusted text size for responsiveness */}
                 I&apos;m a 4th year Information Technology student at the&nbsp;

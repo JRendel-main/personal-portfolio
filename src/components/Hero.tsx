@@ -4,10 +4,16 @@ import { Button } from "@/components/ui/button";
 import { TypeAnimation } from "react-type-animation";
 import profilesm from "@/assets/profilesm.png";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="hero py-24 xs:py-7 sm:py-10 ">
+    <motion.div 
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="hero py-24 xs:py-7 sm:py-10"
+    >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 text-left">
@@ -50,14 +56,19 @@ const Hero = () => {
               </Link>
             </div>
           </div>
-          <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+          <motion.div 
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="md:w-1/2 mt-8 md:mt-0 flex justify-center"
+          >
             <div className="profile-picture-border">
               <Image src={profilesm} alt="Profile" width={350} height={350} />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
