@@ -10,7 +10,7 @@ export default function Home() {
     <main>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <Layout>
-        <div className="container mx-auto px-4 mt-24 min-h-screen overflow-hidden">
+        <div className="container mx-auto px-4 mt-24 min-h-screen min-w-screen">
           <div className="mb-10">
             <Hero />
           </div>

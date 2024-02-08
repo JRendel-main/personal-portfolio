@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Bitter as Inter } from "next/font/google";
+import { Cabin as Inter } from "next/font/google";
 import NavBar from "./NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "./Footer";
