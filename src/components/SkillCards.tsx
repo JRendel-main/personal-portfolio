@@ -15,14 +15,16 @@ interface SkillCardsProps {
 const SkillCards: React.FC<SkillCardsProps> = ({ skillName, skillImage }) => {
   return (
     <div>
-      <Card className='hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 w[200px] h-[200px] animated-border border-2 border-gray-200 rounded-lg dark:bg-zinc-800 shadow-md p-5
+      <Card className='hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 w-100 h-100 animated-border border-2 border-gray-200 rounded-lg dark:bg-zinc-800 shadow-md p-2
       '>
         <CardContent>
           <div className="flex flex-col justify-center items-center">
-            <div className="mb-5">
-              <Image src={`/icons/${skillImage}.svg`} width={100} height={100} alt="icon"/>
+            <div className="">
+              <Image src={`/icons/${skillImage}.svg`} width={50} height={50} alt="icon"/>
             </div>
-            <CardTitle>{skillName}</CardTitle>
+            <CardTitle
+            className='text-center text-sm font-bold dark:text-gray-200'
+            >{skillName}</CardTitle>
           </div>
         </CardContent>
       </Card>

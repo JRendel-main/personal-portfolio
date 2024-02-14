@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Cabin as Inter } from "next/font/google";
+import { Arimo as Inter } from "next/font/google";
 import NavBar from "./NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "./Footer";
@@ -11,7 +11,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className={`${inter.className}
+    <div className={`${inter.className} px-14 md:px-17 lg:px-24
     `}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <NavBar />

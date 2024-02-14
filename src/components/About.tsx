@@ -7,6 +7,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const About = () => {
+  const handleDownloadCV = () => {
+    const path = '/pdf/Resume.pdf';
+
+    window.open(path, '_blank');
+  };
+
   return (
     <div id="about" className="mt-20 py-12">
       <div className="mx-auto">
@@ -63,7 +69,7 @@ const About = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <Button variant="download">Download CV</Button>
+                <Button variant="download" onClick={handleDownloadCV}>Download CV</Button>
               </div>
             </div>
           </div>
