@@ -1,27 +1,70 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Abouts } from "@/constants/About";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
-const About = () => {
+const About: React.FC = () => {
+  const controls = useAnimation();
+  const aboutRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const aboutElement = aboutRef.current;
+
+    const handleScroll = () => {
+      if (!aboutElement) return;
+
+      const { top } = aboutElement.getBoundingClientRect();
+
+      if (top < window.innerHeight * 0.75) {
+        controls.start({ opacity: 1, y: 0 });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls]);
+
   const handleDownloadCV = () => {
-    const path = '/pdf/Resume.pdf';
-
-    window.open(path, '_blank');
+    const path = "/pdf/Resume.pdf";
+    window.open(path, "_blank");
   };
 
   return (
-    <div id="about" className="mt-20 py-12">
+    <div id="about" className="mt-20 py-12" ref={aboutRef}>
       <div className="mx-auto">
-        <div className="grid grid-cols-1 gap-8">
-          <div className="">
-            <div className="text-left lg:text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xs:text-1xl font-bold mb-4">About Me</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          {/* Profile Picture Section */}
+          <div className="flex justify-center items-center">
+            <motion.div
+              className="profile-picture-border relative h-48 w-48 md:h-64 md:w-64 overflow-hidden"
+              animate={controls}
+              initial={{ opacity: 0, y: 100 }}
+            >
+              <Image
+                src="/images/profilesm.png" // Adjust the path to your profile picture
+                alt="Profile Picture"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-full"
+              />
+            </motion.div>
+          </div>
+          {/* About Me Section */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
+            <motion.div
+              className="text-center md:text-left"
+              animate={controls}
+              initial={{ opacity: 0, y: 100 }}
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xs:text-1xl font-bold mb-4">
+                About Me
+              </h1>
               <Separator />
-              <p className="text-1xl lg:text-lg mt-4"> {/* Adjusted text size for responsiveness */}
+              <p className="text-1xl lg:text-lg mt-4">
+                {/* Adjusted text size for responsiveness */}
                 I&apos;m a 4th year Information Technology student at the&nbsp;
                 <Link href="https://neust.edu.ph" target="_blank">
                   <span className="underline font-bold text-red-400">
@@ -32,8 +75,13 @@ const About = () => {
                 and web applications.
               </p>
               <div className="mt-8">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Personal Information</h2> {/* Adjusted text size for responsiveness */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> {/* Changed to single column for small screens */}
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+                  Personal Information
+                </h2>{" "}
+                {/* Adjusted text size for responsiveness */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {" "}
+                  {/* Changed to single column for small screens */}
                   <div>
                     <p className="font-bold">Name:</p>
                     <p className="text-sm md:text-base">{Abouts.Name}</p>
@@ -69,9 +117,11 @@ const About = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <Button variant="download" onClick={handleDownloadCV}>Download CV</Button>
+                <Button variant="download" onClick={handleDownloadCV}>
+                  Download CV
+                </Button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

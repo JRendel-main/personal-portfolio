@@ -3,10 +3,11 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head
-        title="JRendel"
-      />
-      <body className="
+      <Head>
+        <title>JRendels</title>
+      </Head>
+      <body
+        className="
         bg-gradient-to-r from-neutral-100 to-stone-200
         dark:from-neutral-800 dark:to-neutral-900
         text-gray-800
@@ -14,10 +15,10 @@ export default function Document() {
         transition-all
         ease-in-out
         duration-500
-      ">
-        
-          <Main />
-          <NextScript />
+      "
+      >
+        <Main />
+        <NextScript />
       </body>
     </Html>
   );

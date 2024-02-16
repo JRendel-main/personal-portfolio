@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import SkillCards from "@/components/SkillCards";
 
 const skillSet = [
@@ -52,18 +52,39 @@ const skillSet = [
   },
 ];
 
-const Skills = () => {
+const Skills: React.FC = () => {
+  const skillsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const skillsElement = skillsRef.current;
+
+    const handleScroll = () => {
+      if (!skillsElement) return;
+
+      const { top } = skillsElement.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (top < windowHeight * 0.75) {
+        skillsElement.classList.add("animate__animated", "animate__fadeInLeft");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="grid-col grid-cols-2 text-center justify-between gap-3">
+    <div
+      className="grid-col grid-cols-2 text-center justify-between gap-3"
+      ref={skillsRef}
+    >
       <div>
         <h1 className="text-5xl font-bold">Skills</h1>
         <p className="text-2xl font-light">
           Here are some of the technologies I have worked with
         </p>
       </div>
-      <div className="
-        flex flex-wrap justify-center items-center gap-8 my-5
-      ">
+      <div className="flex flex-wrap justify-center items-center gap-8 my-5">
         {skillSet.map((skill, index) => (
           <SkillCards
             key={index}
