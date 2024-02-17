@@ -4,14 +4,12 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>JRendels</title>
+        <title>JRendels || Web Developer</title>
       </Head>
       <body
         className="
-        bg-gradient-to-r from-neutral-100 to-stone-200
-        dark:from-neutral-800 dark:to-neutral-900
-        text-gray-800
-        dark:text-gray-200
+        bg-gradient-to-r from-violet-200 to-pink-200
+        dark:from-zinc-800 dark:to-slate-800
         transition-all
         ease-in-out
         duration-500

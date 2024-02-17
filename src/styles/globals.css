@@ -119,3 +119,10 @@
 .curve-background {
   background: linear-gradient(to right top, #657587 50%, #e0e6ed 50%);
 }
+
+.section-container {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+  /* Smooth transition effect for background color */
+}

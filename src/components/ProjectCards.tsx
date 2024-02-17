@@ -30,37 +30,44 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
   projectLink,
   projectDemo,
   projectTags,
-  projectType
+  projectType,
 }) => {
   return (
     <div className="">
       <Card className="h-[530px] bg-opacity-75 overflow-hidden hover:shadow-md hover:shadow-purple-800 hover:scale-110 transition-all duration-700 dark:bg-zinc-800 dark:backdrop-blur">
         <CardHeader className="bg-opacity-100">
-          <h1 className="text-left text-sm font-small">
+          <h1 className="flex text-left text-sm font-small items-center">
             {projectType === "Full Stack" ? (
               <Badge variant={"full_stack"}>Full Stack</Badge>
             ) : projectType === "Frontend" ? (
               <Badge variant={"frontend"}>Frontend</Badge>
             ) : (
               <Badge variant={"backend"}>Backend</Badge>
-            
             )}
           </h1>
-          <Image src={`/images/${projectImage}`} alt="project" width={350} height={200} />
+          <Image
+            src={`/images/${projectImage}`}
+            alt="project"
+            width={350}
+            height={200}
+          />
         </CardHeader>
         <CardContent>
-          <CardTitle className="mt-2 text-l">{projectName}</CardTitle>
-          <CardDescription className="mt-2 text-sm">{projectDescription}</CardDescription>
+          <CardTitle className="mt-2 text-sm">{projectName}</CardTitle>
+          <CardDescription className="mt-2 text-small">
+            {projectDescription}
+          </CardDescription>
         </CardContent>
         <CardFooter className="grid grid-rows-2 justify-center bg-opacity-100">
           <div className="grid justify-center gap-5">
             <Link href={projectLink}>
               <Button variant={"secondary"}>
-                <SiGithub className="text-2xl" />&nbsp;Github
+                <SiGithub className="text-2xl" />
+                &nbsp;Github
               </Button>
             </Link>
           </div>
-          <div className="flex gap-3 justify-between mt-5">
+          <div className="flex flex-col lg:flex-row gap-3 justify-between mt-5">
             {projectTags.map((tag, index) => (
               <Badge key={index} variant={"tech_badge"}>
                 {tag}
